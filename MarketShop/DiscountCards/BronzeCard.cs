@@ -14,18 +14,15 @@ namespace MarketStore
 
         public override double CalculateCurrentDiscount()
         {
-            if (this.Turnover < 100)
-            {
-                return 0;
-            }
-            else if (this.Turnover >= 100 && this.Turnover <= 300)
+            if (this.Turnover >= 100 && this.Turnover <= 300)
             {
                 return 1;
             }
-            else
+            else if (this.Turnover > 300)
             {
                 return 2.5;
             }
+            return this.InitialDiscountRate;
         }
     }
 }

@@ -13,11 +13,6 @@ namespace MarketStore
         }
         public override double CalculateCurrentDiscount()
         {
-            if (this.Turnover < 100)
-            {
-                return this.InitialDiscountRate;
-            }
-
             var discountGrow = 1;
             var amount = 100;
             var capping = 10;
